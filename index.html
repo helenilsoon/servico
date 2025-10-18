@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webuildSites - Banner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: linear-gradient(135deg, #1a5f7a 0%, #2a8aa8 100%);
+            border-radius: 20px;
+            padding: 50px 30px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, 30px); }
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .urgencia {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: shine 2s ease-in-out infinite;
+        }
+        
+        @keyframes shine {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .titulo {
+            font-size: 42px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 10px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitulo {
+            font-size: 18px;
+            color: #e0f2f7;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+        
+        .resolvo {
+            background: rgba(255,255,255,0.15);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            font-size: 16px;
+            color: white;
+            font-weight: 600;
+            border-left: 4px solid #4ecdc4;
+        }
+        
+        .features {
+            text-align: left;
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        
+        .feature:last-child {
+            margin-bottom: 0;
+        }
+        
+        .feature-icon {
+            font-size: 24px;
+            margin-right: 12px;
+            min-width: 30px;
+        }
+        
+        .destaques {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .destaque {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .cta-section {
+            margin-bottom: 25px;
+        }
+        
+        .cta-text {
+            color: #4ecdc4;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .whatsapp-numbers {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .number {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            border: 2px solid rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .number:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+        
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            gap: 10px;
+            text-decoration: none;
+            margin: 0 auto;
+            display: inline-flex;
+        }
+        
+        .btn-whatsapp:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+        }
+        
+        .btn-whatsapp:active {
+            transform: translateY(-2px);
+        }
+        
+        .logo-section {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            margin-top: 25px;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 5px;
+        }
+        
+        .logo-subtext {
+            font-size: 13px;
+            color: #4ecdc4;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="urgencia">⏰ PROMOÇÃO - Primeira avaliação GRÁTIS</div>
+            
+            <h1 class="titulo">Seu site está fora do ar ou desatualizado?</h1>
+            <p class="subtitulo">🎯 Nós resolvemos!</p>
+            
+            <div class="resolvo">
+                ✨ Deixa comigo - você só ganha!
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon">🔧</span>
+                    <span>Criação e manutenção de sites</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">💬</span>
+                    <span>Botão do WhatsApp integrado</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📱</span>
+                    <span>Links do Instagram otimizados</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🌐</span>
+                    <span>Páginas profissionais (WordPress ou Personalizado)</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🚀</span>
+                    <span>Rápido, acessível e que FUNCIONA!</span>
+                </div>
+            </div>
+            
+            <div class="destaques">
+                <div class="destaque">⭐ +50 empresas confiaram</div>
+                <div class="destaque">✅ Suporte 24h</div>
+                <div class="destaque">💰 Melhor preço</div>
+            </div>
+            
+            <div class="cta-section">
+                <div class="cta-text">👇 Chama no WhatsApp 👇</div>
+                <div class="whatsapp-numbers">
+                    <div class="number">(92) 99180-5753</div>
+                    <div class="number">(92) 98118-6413</div>
+                </div>
+            </div>
+            
+            <button class="btn-whatsapp" onclick="window.open('https://wa.me/5592991805753', '_blank')">
+                📲 FALAR AGORA
+            </button>
+            
+            <div class="logo-section">
+                <div class="logo-text">webuildSites</div>
+                <div class="logo-subtext">Soluções digitais para pequenos negócios</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
